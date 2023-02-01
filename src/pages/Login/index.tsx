@@ -37,18 +37,19 @@ const styles = {
 }
 
 export const LoginPage: FC = () => {
-  useEffect(() => {
-    axios.get('/login').then((res) => console.log(res))
-  })
+  const handleLogin = () => {
+    fetch('/v1/user/login').then((res) => console.log(res))
+  }
+  // useEffect(() => {
+  //   fetch('/v1/user/login').then((res) => console.log(res))
+  // })
   return (
     <div css={styles.container}>
       <h2 css={styles.title}>Ph Chat</h2>
       <Form<FormValues, SignInSchema>
         schema={signInSchema}
-        options={{ mode: 'onBlur' }}
-        onSubmit={async (values) => {
-          alert(JSON.stringify(values, null, 2))
-        }}
+        options={{ mode: 'onChange' }}
+        onSubmit={handleLogin}
       >
         {({ register, formState }) => (
           <div css={styles.form}>
