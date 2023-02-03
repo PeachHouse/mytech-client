@@ -15,12 +15,12 @@ type TextInputProps = {
 const styles = {
   container: css`
     position: relative;
-    border: 1px solid ${colors.secondary};
-    border-radius: 4px;
+    border: 3px solid ${colors.lightGray};
+    border-radius: 8px;
     padding: 10px;
     height: 100%;
     font-size: 18px;
-    background-color: ${colors.secondary};
+    background-color: ${colors.white};
     display: flex;
     align-items: center;
   `,
@@ -28,10 +28,11 @@ const styles = {
     width: 100%;
     height: 100%;
     padding-left: 10px;
-    color: ${colors.white};
+    color: ${colors.primary};
 
     &::placeholder {
       color: ${colors.gray};
+      font-size: 14px;
     }
   `,
 }

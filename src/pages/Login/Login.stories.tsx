@@ -1,10 +1,16 @@
 import type { ComponentMeta, ComponentStoryObj } from '@storybook/react'
 import { LoginPage } from '@/pages/Login'
 import { userEvent, within } from '@storybook/testing-library'
+import { MemoryRouter } from 'react-router-dom'
 
 export default { component: LoginPage } as ComponentMeta<typeof LoginPage>
 
 export const Success: ComponentStoryObj<typeof LoginPage> = {
+  render: () => (
+    <MemoryRouter>
+      <LoginPage />
+    </MemoryRouter>
+  ),
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement)
     const emailInput = canvas.getByTestId('email')
@@ -20,6 +26,11 @@ export const Success: ComponentStoryObj<typeof LoginPage> = {
 }
 
 export const Failed: ComponentStoryObj<typeof LoginPage> = {
+  render: () => (
+    <MemoryRouter>
+      <LoginPage />
+    </MemoryRouter>
+  ),
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement)
     const emailInput = canvas.getByTestId('email')
