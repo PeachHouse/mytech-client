@@ -1,13 +1,13 @@
 /** @jsxImportSource @emotion/react */
+import { FC, ReactNode } from 'react'
 import { FieldError } from 'react-hook-form'
 import { css } from '@emotion/react'
 import { colors } from '@/constants/colors'
-import { FC } from 'react'
 
 type FieldWrapperProps = {
   label?: string
   className?: string
-  children: React.ReactNode
+  children: ReactNode
   error?: FieldError | undefined
   description?: string
 }

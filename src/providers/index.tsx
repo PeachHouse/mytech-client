@@ -1,10 +1,10 @@
-import { FC } from 'react'
+import { FC, ReactNode } from 'react'
 // import useSWR, { SWRConfig } from 'swr'
 // import axiosInstance from '@/libs/axiosClinet'
 import { GlobalStyle } from '@/styles/GlobalStyle'
 
 type AppProviderProps = {
-  children: React.ReactNode
+  children: ReactNode
 }
 
 export const AppProvider: FC<AppProviderProps> = ({ children }) => {
