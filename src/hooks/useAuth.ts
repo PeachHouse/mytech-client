@@ -1,7 +1,7 @@
 import { axios } from '@/libs/axios'
 import { LoginFormValues } from '@/pages/Login/LoginPage'
 import { useNavigate } from 'react-router-dom'
-import {SignupFormValues} from "@/pages/Signup/SignupPage";
+import { SignupFormValues } from "@/pages/Signup/SignupPage";
 
 export const useAuth = () => {
   const navigate = useNavigate()
