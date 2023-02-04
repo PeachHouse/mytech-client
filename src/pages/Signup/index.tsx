@@ -48,8 +48,8 @@ const styles = {
 const Presentation: FC<SignupProps> = ({ handleSignup }) => {
     return (
         <div css={styles.container}>
-            <h2 css={styles.title}>Welcome Back...</h2>
-            <p css={styles.text}>Please enter your email and password</p>
+            <h2 css={styles.title}>Welcome...</h2>
+            <p css={styles.text}>Please enter your name, email and password</p>
             <Form<SignupFormValues>
                 schema={signupSchema}
                 options={{ mode: 'onBlur' }}
