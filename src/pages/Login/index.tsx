@@ -52,7 +52,7 @@ const Presentation: FC<LoginProps> = ({ handleLogin }) => {
       <p css={styles.text}>Please enter your email and password</p>
       <Form<LoginFormValues>
         schema={loginSchema}
-        options={{ mode: 'onBlue' }}
+        options={{ mode: 'onBlur' }}
         onSubmit={handleLogin}
       >
         {({ register, formState }) => (
