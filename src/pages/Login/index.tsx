@@ -4,7 +4,7 @@ import { css } from '@emotion/react'
 import { colors } from '@/constants/colors'
 import { Form, InputField } from '@/components/functional/Form'
 import { Button } from '@/components/ui/Button'
-import { signInSchema } from '@/constants/schema'
+import { loginSchema } from '@/constants/schema'
 import { FiMail } from 'react-icons/all'
 import { RiLockPasswordLine } from 'react-icons/all'
 import { fadeIn } from '@/styles/keyframes/fadeIn'
@@ -51,8 +51,8 @@ const Presentation: FC<LoginProps> = ({ handleLogin }) => {
       <h2 css={styles.title}>Welcome Back...</h2>
       <p css={styles.text}>Please enter your email and password</p>
       <Form<LoginFormValues>
-        schema={signInSchema}
-        options={{ mode: 'onBlur' }}
+        schema={loginSchema}
+        options={{ mode: 'onBlue' }}
         onSubmit={handleLogin}
       >
         {({ register, formState }) => (
