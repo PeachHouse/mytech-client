@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react'
 import { FC } from 'react'
-import { RiArticleLine, AiOutlineSearch, TbLogout } from 'react-icons/all'
+import { AiOutlineSearch, TbLogout, HiOutlineDocumentPlus } from 'react-icons/all'
 import { Notification } from '@/components/ui/Notification'
 import { useNavigate } from 'react-router-dom'
 import { ROUTING_PATH } from '@/routes'
@@ -49,7 +49,7 @@ const Presentation: FC<HeaderProps> = ({ onClick }) => {
             <Notification size={22} />
           </li>
           <li css={headerStyles.list}>
-            <RiArticleLine size={22} />
+            <HiOutlineDocumentPlus size={22} />
           </li>
           <li css={headerStyles.list}>
             <TbLogout size={22} />
