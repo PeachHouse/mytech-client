@@ -1,10 +1,10 @@
-import { IoNotificationsOutline } from 'react-icons/all';
-import { FC } from "react";
+import { IoNotificationsOutline } from 'react-icons/all'
+import { FC } from 'react'
 
 type NotificationProps = {
-    size: number
-};
+  size: number
+}
 
-export const Notification: FC<NotificationProps> = ({size}) => {
-    return <IoNotificationsOutline size={size}/>
+export const Notification: FC<NotificationProps> = ({ size }) => {
+  return <IoNotificationsOutline size={size} />
 }

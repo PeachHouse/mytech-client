@@ -5,9 +5,9 @@ import { HomePage, LoginPage, NotFoundPage, SignupPage, SearchPage } from '@/pag
 export const ROUTING_PATH = {
   HOME: '/',
   LOGIN: '/login',
-  SIGNUP: "/signup",
-  SEARCH: "/search",
-  NOT_FOUND: '*'
+  SIGNUP: '/signup',
+  SEARCH: '/search',
+  NOT_FOUND: '*',
 }
 
 const router = createBrowserRouter([
@@ -30,7 +30,7 @@ const router = createBrowserRouter([
   {
     path: ROUTING_PATH.SEARCH,
     element: <SearchPage />,
-  }
+  },
 ])
 
 export const AppRoutes = () => {
