@@ -1,16 +1,9 @@
 /** @jsxImportSource @emotion/react */
+import { css } from '@emotion/react'
 import { FC, ReactNode } from 'react'
 import { UseFormRegisterReturn } from 'react-hook-form'
-import { css } from '@emotion/react'
-import { colors } from '@/constants/colors'
 
-type TextInputProps = {
-  type?: 'text' | 'password'
-  registration?: UseFormRegisterReturn
-  placeholder?: string
-  icon?: ReactNode
-  testId?: string
-}
+import { colors } from '@/constants/colors'
 
 const styles = {
   container: css`
@@ -35,6 +28,14 @@ const styles = {
       font-size: 14px;
     }
   `,
+}
+
+type TextInputProps = {
+  type?: 'text' | 'password'
+  registration?: UseFormRegisterReturn
+  placeholder?: string
+  icon?: ReactNode
+  testId?: string
 }
 
 export const TextInput: FC<TextInputProps> = ({

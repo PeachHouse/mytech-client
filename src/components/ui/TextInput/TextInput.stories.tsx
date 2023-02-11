@@ -1,5 +1,6 @@
 import { ComponentMeta, ComponentStoryObj } from '@storybook/react'
-import { TextInput } from '@/components/ui/TextInput'
+
+import { TextInput } from '@/components/ui'
 
 export default { component: TextInput } as ComponentMeta<typeof TextInput>
 

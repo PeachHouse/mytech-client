@@ -1,13 +1,8 @@
 /** @jsxImportSource @emotion/react */
-import { FC, ReactNode } from 'react'
 import { css } from '@emotion/react'
-import { colors } from '@/constants/colors'
+import { FC, ReactNode } from 'react'
 
-type ButtonProps = {
-  color: 'primary'
-  children: ReactNode
-  disabled?: boolean
-}
+import { colors } from '@/constants/colors'
 
 const buttonStyles = css`
   width: 100%;
@@ -31,6 +26,12 @@ const buttonStyles = css`
     color: ${colors.white};
   }
 `
+
+type ButtonProps = {
+  color: 'primary'
+  children: ReactNode
+  disabled?: boolean
+}
 
 export const Button: FC<ButtonProps> = (props) => {
   return (

@@ -1,7 +1,8 @@
 import { FC, ReactNode } from 'react'
-import { FieldWrapper } from '@/components/functional/Form'
 import { UseFormRegisterReturn, FieldError } from 'react-hook-form'
-import { TextInput } from '@/components/ui/TextInput'
+
+import { FieldWrapper } from '@/components/functional/Form'
+import { TextInput } from '@/components/ui'
 
 type InputFieldProps = {
   type?: 'text' | 'password'
