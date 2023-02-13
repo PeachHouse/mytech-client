@@ -1,6 +1,8 @@
-import type { ComponentMeta, ComponentStoryObj } from '@storybook/react'
-import { InputField } from '@/components/functional/Form/InputField'
 import { FiMail } from 'react-icons/all'
+
+import type { ComponentMeta, ComponentStoryObj } from '@storybook/react'
+
+import { InputField } from '@/components/functional/Form/InputField'
 
 export default { component: InputField } as ComponentMeta<typeof InputField>
 

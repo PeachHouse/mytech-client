@@ -1,16 +1,18 @@
 /** @jsxImportSource @emotion/react */
-import { FC, Suspense } from 'react'
 import { css } from '@emotion/react'
-import { colors } from '@/constants/colors'
-import { Form, InputField } from '@/components/functional/Form'
-import { Button } from '@/components/ui/Button'
-import { loginSchema } from '@/constants/schema'
-import { FiMail } from 'react-icons/all'
-import { RiLockPasswordLine } from 'react-icons/all'
-import { fadeIn } from '@/styles/keyframes/fadeIn'
+import { FC, Suspense } from 'react'
 import { ErrorBoundary } from 'react-error-boundary'
-import { LoginFormValues, LoginProps } from './LoginPage'
+import { FiMail, AiOutlineUser } from 'react-icons/all'
+import { RiLockPasswordLine } from 'react-icons/all'
+
+import { Form, InputField } from '@/components/functional/Form'
+import { Button } from '@/components/ui'
+import { colors } from '@/constants/colors'
+import { signupSchema } from '@/constants/schema'
 import { useAuth } from '@/hooks/useAuth'
+import { SignupFormValues, SignupProps } from '@/pages'
+import { fadeIn } from '@/styles/keyframes/fadeIn'
+
 
 const styles = {
   container: css`
@@ -45,18 +47,26 @@ const styles = {
   `,
 }
 
-const Presentation: FC<LoginProps> = ({ handleLogin }) => {
+const Presentation: FC<SignupProps> = ({ handleSignup }) => {
   return (
     <div css={styles.container}>
-      <h2 css={styles.title}>Welcome Back...</h2>
-      <p css={styles.text}>Please enter your email and password</p>
-      <Form<LoginFormValues>
-        schema={loginSchema}
+      <h2 css={styles.title}>Welcome...</h2>
+      <p css={styles.text}>Please enter your name, email and password</p>
+      <Form<SignupFormValues>
+        schema={signupSchema}
         options={{ mode: 'onBlur' }}
-        onSubmit={handleLogin}
+        onSubmit={handleSignup}
       >
         {({ register, formState }) => (
           <div css={styles.form}>
+            <InputField
+              type='text'
+              registration={register('name')}
+              placeholder={'Name'}
+              error={formState.errors.name}
+              icon={<AiOutlineUser size={25} color={colors.gray} />}
+              testId='name'
+            />
             <InputField
               type='text'
               registration={register('email')}
@@ -74,7 +84,7 @@ const Presentation: FC<LoginProps> = ({ handleLogin }) => {
               testId='password'
             />
             <Button color='primary' disabled={!formState.isValid || !formState.isDirty}>
-              Sign In
+              Sign Up
             </Button>
           </div>
         )}
@@ -83,15 +93,15 @@ const Presentation: FC<LoginProps> = ({ handleLogin }) => {
   )
 }
 
-export const LoginPage: FC = () => {
-  const { login } = useAuth()
-  const handleLogin = async (values: LoginFormValues) => {
-    login(values)
+export const SignupPage: FC = () => {
+  const { signup } = useAuth()
+  const handleSignup = async (values: SignupFormValues) => {
+    signup(values)
   }
   return (
     <ErrorBoundary fallback={<p>An Error Occurred</p>}>
       <Suspense fallback={<p>loading...</p>}>
-        <Presentation handleLogin={handleLogin} />
+        <Presentation handleSignup={handleSignup} />
       </Suspense>
     </ErrorBoundary>
   )

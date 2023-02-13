@@ -1,6 +1,7 @@
-import { FC } from 'react'
 import { Global, css } from '@emotion/react'
 import emotionReset from 'emotion-reset'
+import { FC } from 'react'
+
 import { colors } from '@/constants/colors'
 
 const globalStyle = css`
