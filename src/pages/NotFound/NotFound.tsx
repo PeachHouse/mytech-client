@@ -2,8 +2,8 @@ import { css } from '@emotion/react'
 import { FC } from 'react'
 import { Link } from 'react-router-dom'
 
-import { colors } from '@/constants/colors'
 import { ROUTING_PATH } from '@/routes'
+import { colors } from '@/styles/colors'
 
 const styles = {
   container: css`

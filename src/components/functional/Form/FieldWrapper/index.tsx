@@ -3,7 +3,7 @@ import { css } from '@emotion/react'
 import { FC, ReactNode } from 'react'
 import { FieldError } from 'react-hook-form'
 
-import { colors } from '@/constants/colors'
+import { colors } from '@/styles/colors'
 
 type FieldWrapperProps = {
   label?: string

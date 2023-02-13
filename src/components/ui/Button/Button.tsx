@@ -2,7 +2,7 @@
 import { css } from '@emotion/react'
 import { FC, ReactNode } from 'react'
 
-import { colors } from '@/constants/colors'
+import { colors } from '@/styles/colors'
 
 const buttonStyles = css`
   width: 100%;
