@@ -13,7 +13,6 @@ import { useAuth } from '@/hooks/useAuth'
 import { LoginFormValues, LoginProps } from '@/pages'
 import { fadeIn } from '@/styles/keyframes/fadeIn'
 
-
 const styles = {
   container: css`
     padding: 40px 120px 120px 120px;
