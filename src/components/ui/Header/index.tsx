@@ -8,8 +8,9 @@ import {
   IoNotificationsOutline,
 } from 'react-icons/all'
 import { useNavigate } from 'react-router-dom'
-import { ROUTING_PATH } from '@/routes'
+
 import { Avater } from '@/components/functional/User/Avater'
+import { ROUTING_PATH } from '@/routes'
 
 const headerStyles = {
   container: css`
