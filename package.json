@@ -13,6 +13,7 @@
     "fix:stylelint": "stylelint **/*.{css,scss,sass} --fix",
     "test": "vitest --ui",
     "coverage": "vitest run --coverage",
+    "format": "prettier --write '**/*.{ts,tsx}'",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "branch:delete": "git branch --merged|egrep -v '*|develop'|xargs git branch -d",
@@ -36,8 +37,10 @@
     "zod": "^3.20.2"
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx}": "yarn lint:eslint",
-    "*.{css,scss,sass}": "yarn lint:stylelint"
+    "*.{js,jsx,ts,tsx}": [
+      "yarn lint:eslint",
+      "yarn format"
+    ]
   },
   "devDependencies": {
     "@babel/core": "^7.20.12",
@@ -78,9 +81,6 @@
     "postcss": "^8.4.20",
     "postcss-syntax": "^0.36.2",
     "prettier": "^2.8.1",
-    "stylelint": "^14.16.1",
-    "stylelint-config-prettier": "^9.0.4",
-    "stylelint-config-standard": "^29.0.0",
     "typescript": "*",
     "vite": "^4.0.0",
     "vitest": "^0.28.4"
