@@ -1,10 +1,15 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react'
 import { FC } from 'react'
-import { AiOutlineSearch, TbLogout, HiOutlineDocumentPlus } from 'react-icons/all'
-import { Notification } from '@/components/ui/Notification'
+import {
+  AiOutlineSearch,
+  TbLogout,
+  HiOutlineDocumentPlus,
+  IoNotificationsOutline,
+} from 'react-icons/all'
 import { useNavigate } from 'react-router-dom'
 import { ROUTING_PATH } from '@/routes'
+import { Avater } from '@/components/functional/User/Avater'
 
 const headerStyles = {
   container: css`
@@ -18,6 +23,7 @@ const headerStyles = {
   wrapper: css`
     display: flex;
     gap: 15px;
+    align-items: center;
   `,
   list: css`
     cursor: pointer;
@@ -46,13 +52,13 @@ const Presentation: FC<HeaderProps> = ({ onClick }) => {
             <AiOutlineSearch size={22} />
           </li>
           <li css={headerStyles.list}>
-            <Notification size={22} />
+            <IoNotificationsOutline size={22} />
           </li>
           <li css={headerStyles.list}>
             <HiOutlineDocumentPlus size={22} />
           </li>
           <li css={headerStyles.list}>
-            <TbLogout size={22} />
+            <Avater size='small' />
           </li>
         </ul>
       </nav>
