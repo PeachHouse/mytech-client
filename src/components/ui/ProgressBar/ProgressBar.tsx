@@ -7,9 +7,7 @@ import { colors } from '@/constants/colors'
 
 type ProgressProps = {
   rate: number
-
   indicatorColor: (typeof colors)[keyof typeof colors]
-
   label: string
 }
 
