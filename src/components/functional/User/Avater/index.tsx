@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 
-import { FC } from 'react'
 import { css } from '@emotion/react'
+import { FC } from 'react'
 
 type AvaterProps = {
   size: 'small' | 'medium' | 'large'
