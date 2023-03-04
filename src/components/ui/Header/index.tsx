@@ -1,15 +1,11 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react'
 import { FC } from 'react'
-import {
-  AiOutlineSearch,
-  TbLogout,
-  HiOutlineDocumentPlus,
-  IoNotificationsOutline,
-} from 'react-icons/all'
+import { AiOutlineSearch, HiOutlineDocumentPlus, IoNotificationsOutline } from 'react-icons/all'
 import { useNavigate } from 'react-router-dom'
+
+import { Avatar } from '@/components/model/User/Avatar'
 import { ROUTING_PATH } from '@/routes'
-import { Avater } from '@/components/functional/User/Avater'
 
 const headerStyles = {
   container: css`
@@ -58,7 +54,7 @@ const Presentation: FC<HeaderProps> = ({ onClick }) => {
             <HiOutlineDocumentPlus size={22} />
           </li>
           <li css={headerStyles.list}>
-            <Avater size='small' />
+            <Avatar size='small' />
           </li>
         </ul>
       </nav>

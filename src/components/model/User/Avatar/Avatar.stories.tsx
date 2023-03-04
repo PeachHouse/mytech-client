@@ -1,9 +1,10 @@
 import type { ComponentMeta, ComponentStoryObj } from '@storybook/react'
-import { Avater } from '@/components/functional/User/Avater'
 
-export default { component: Avater } as ComponentMeta<typeof Avater>
+import { Avatar } from '@/components/model/User/Avatar'
 
-export const Default: ComponentStoryObj<typeof Avater> = {
+export default { component: Avatar } as ComponentMeta<typeof Avatar>
+
+export const Default: ComponentStoryObj<typeof Avatar> = {
   args: {
     size: 'small',
   },

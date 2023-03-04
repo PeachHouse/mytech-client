@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react'
-import { FC, ReactNode } from 'react'
+import { ComponentProps, FC } from 'react'
 
 import { colors } from '@/styles/colors'
 
@@ -27,16 +27,16 @@ const buttonStyles = css`
   }
 `
 
-type ButtonProps = {
+type ButtonProps = ComponentProps<'button'> & {
   color: 'primary'
-  children: ReactNode
-  disabled?: boolean
+  isLoading?: boolean
 }
 
-export const Button: FC<ButtonProps> = (props) => {
+export const Button: FC<ButtonProps> = (props: ButtonProps) => {
+  const { isLoading, ...buttonProps } = props
   return (
-    <button {...props} css={buttonStyles} data-color={props.color} disabled={props.disabled}>
-      {props.children}
+    <button {...buttonProps} css={buttonStyles} data-color={props.color} disabled={props.disabled}>
+      {isLoading ? '...Loading' : props.children}
     </button>
   )
 }

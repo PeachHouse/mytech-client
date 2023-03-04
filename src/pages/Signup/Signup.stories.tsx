@@ -1,8 +1,8 @@
 import { ComponentMeta, ComponentStoryObj } from '@storybook/react'
-import { MemoryRouter } from 'react-router-dom'
 import { userEvent, within } from '@storybook/testing-library'
+import { MemoryRouter } from 'react-router-dom'
 
-import { SignupPage } from "@/pages/Signup/index";
+import { SignupPage } from '@/pages/Signup/index'
 
 export default { component: SignupPage } as ComponentMeta<typeof SignupPage>
 
