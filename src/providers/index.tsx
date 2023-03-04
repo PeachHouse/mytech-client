@@ -1,7 +1,6 @@
 import { FC, ReactNode } from 'react'
+import { RecoilRoot } from 'recoil'
 
-// import useSWR, { SWRConfig } from 'swr'
-// import axiosInstance from '@/libs/axiosClinet'
 import { GlobalStyle } from '@/styles/GlobalStyle'
 
 type AppProviderProps = {
@@ -10,11 +9,9 @@ type AppProviderProps = {
 
 export const AppProvider: FC<AppProviderProps> = ({ children }) => {
   return (
-    // <SWRConfig value={{ fetcher: (url) => axiosInstance(url).then((res) => res.json()) }}>
-    <>
+    <RecoilRoot>
       <GlobalStyle />
       {children}
-    </>
-    // </SWRConfig>
+    </RecoilRoot>
   )
 }

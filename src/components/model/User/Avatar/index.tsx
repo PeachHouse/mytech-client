@@ -1,14 +1,10 @@
 /** @jsxImportSource @emotion/react */
-
-import { FC } from 'react'
 import { css } from '@emotion/react'
+import { FC } from 'react'
 
-type AvaterProps = {
-  size: 'small' | 'medium' | 'large'
-  src?: string
-}
+import { AvatarProps } from '@/components/model/User'
 
-const avaterStyles = {
+const avatarStyles = {
   container: css`
     border-radius: 50%;
     position: relative;
@@ -37,11 +33,12 @@ const avaterStyles = {
   `,
 }
 
-export const Avater: FC<AvaterProps> = ({ size, src }) => {
-  const defaultImg = '../../../../../public/images/mytech-icon.png'
+export const Avatar: FC<AvatarProps> = ({ size, src }) => {
+  const defaultImg = 'https://source.unsplash.com/random'
+
   return (
-    <div css={avaterStyles.container} data-size={size}>
-      <img css={avaterStyles.icon} src={src ?? defaultImg} />
+    <div css={avatarStyles.container} data-size={size}>
+      <img css={avatarStyles.icon} src={src ?? defaultImg} />
     </div>
   )
 }

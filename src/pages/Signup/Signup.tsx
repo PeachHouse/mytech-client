@@ -5,14 +5,12 @@ import { ErrorBoundary } from 'react-error-boundary'
 import { FiMail, AiOutlineUser } from 'react-icons/all'
 import { RiLockPasswordLine } from 'react-icons/all'
 
-import { Form, InputField } from '@/components/functional/Form'
+import { Form, InputField, signupSchema } from '@/components/functional/Form'
 import { Button } from '@/components/ui'
-import { colors } from '@/constants/colors'
-import { signupSchema } from '@/constants/schema'
 import { useAuth } from '@/hooks/useAuth'
 import { SignupFormValues, SignupProps } from '@/pages'
-import { fadeIn } from '@/styles/keyframes/fadeIn'
-
+import { fadeIn } from '@/styles/animation/fadeIn'
+import { colors } from '@/styles/colors'
 
 const styles = {
   container: css`
