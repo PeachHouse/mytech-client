@@ -3,12 +3,13 @@ import { userEvent, within } from '@storybook/testing-library'
 import type { ComponentMeta, ComponentStoryObj } from '@storybook/react'
 
 import { Presenter as SignupPage } from '@/pages/Signup/Presenter'
+import { SignupFormValues } from '@/pages/Signup/type'
 
 export default { component: SignupPage } as ComponentMeta<typeof SignupPage>
 
 export const Success: ComponentStoryObj<typeof SignupPage> = {
   args: {
-    handleSignup: async (value) => console.log(value),
+    handleSignup: async (value: SignupFormValues) => console.log(value),
   },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement)
@@ -29,6 +30,9 @@ export const Success: ComponentStoryObj<typeof SignupPage> = {
 }
 
 export const Failed: ComponentStoryObj<typeof SignupPage> = {
+  args: {
+    handleSignup: async (value: SignupFormValues) => console.log(value),
+  },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement)
     const nameInput = canvas.getByTestId('name')

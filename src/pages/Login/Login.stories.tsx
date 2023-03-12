@@ -3,13 +3,14 @@ import { userEvent, within } from '@storybook/testing-library'
 import type { ComponentMeta, ComponentStoryObj } from '@storybook/react'
 
 import { Presenter as LoginPage } from '@/pages/Login/Presenter'
+import { LoginFormValues } from '@/pages/Login/type'
 
 export default { component: LoginPage } as ComponentMeta<typeof LoginPage>
 
 export const Success: ComponentStoryObj<typeof LoginPage> = {
-  // args: {
-  //   handleLogin: async (value) => console.log(value),
-  // },
+  args: {
+    handleLogin: async (value: LoginFormValues) => console.log(value),
+  },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement)
     const emailInput = canvas.getByTestId('email')
@@ -25,9 +26,9 @@ export const Success: ComponentStoryObj<typeof LoginPage> = {
 }
 
 export const Failed: ComponentStoryObj<typeof LoginPage> = {
-  // args: {
-  //   handleLogin: async (value) => console.log(value),
-  // },
+  args: {
+    handleLogin: async (value: LoginFormValues) => console.log(value),
+  },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement)
     const emailInput = canvas.getByTestId('email')
