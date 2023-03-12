@@ -2,6 +2,7 @@
 import { css } from '@emotion/react'
 import { ComponentProps, FC } from 'react'
 
+import { Loading } from '@/components/ui'
 import { colors } from '@/styles/colors'
 
 const buttonStyles = css`
@@ -9,6 +10,10 @@ const buttonStyles = css`
   padding: 20px;
   font-size: 18px;
   border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  justify-content: center;
 
   &[data-color='primary'] {
     border: 1px solid ${colors.purple};
@@ -36,7 +41,8 @@ export const Button: FC<ButtonProps> = (props: ButtonProps) => {
   const { isLoading, ...buttonProps } = props
   return (
     <button {...buttonProps} css={buttonStyles} data-color={props.color} disabled={props.disabled}>
-      {isLoading ? '...Loading' : props.children}
+      {isLoading && <Loading />}
+      {props.children}
     </button>
   )
 }

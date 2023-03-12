@@ -1,2 +1,6 @@
 export * from './Button'
 export * from './TextInput'
+export * from './Header'
+export * from './Layout'
+export * from './Loading'
+export * from './Icon'

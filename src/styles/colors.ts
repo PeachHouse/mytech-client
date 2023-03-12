@@ -7,3 +7,5 @@ export const colors = {
   red: '#dc3547',
   white: '#fff',
 } as const
+
+export type Color = (typeof colors)[keyof typeof colors]

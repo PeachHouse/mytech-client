@@ -1,8 +1,7 @@
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 
-import { Layout } from '@/components/ui/Layout/Layout'
-import { HomePage, LoginPage, NotFoundPage, SignupPage, SearchPage } from '@/pages'
-import { AuthGuardRoute } from '@/routes/AuthGuardRoute'
+import { Layout } from '@/components/ui/Layout'
+import { HomePage, LoginPage, SignupPage, SearchPage, NotFoundPage } from '@/pages'
 
 export const ROUTING_PATH = {
   HOME: '/',
@@ -22,15 +21,11 @@ const router = createBrowserRouter([
     element: <LoginPage />,
   },
   {
-    path: ROUTING_PATH.NOT_FOUND,
-    element: <NotFoundPage />,
-  },
-  {
     path: ROUTING_PATH.HOME,
     element: (
-      <AuthGuardRoute>
-        <Layout />
-      </AuthGuardRoute>
+      // <AuthGuardRoute>
+      <Layout />
+      // </AuthGuardRoute>
     ),
     children: [
       {
@@ -42,6 +37,10 @@ const router = createBrowserRouter([
         element: <SearchPage />,
       },
     ],
+  },
+  {
+    path: ROUTING_PATH.NOT_FOUND,
+    element: <NotFoundPage />,
   },
 ])
 

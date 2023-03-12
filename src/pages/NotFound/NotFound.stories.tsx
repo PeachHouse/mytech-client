@@ -2,7 +2,7 @@ import { MemoryRouter } from 'react-router-dom'
 
 import type { ComponentMeta, ComponentStoryObj } from '@storybook/react'
 
-import { NotFoundPage } from '@/pages/NotFound'
+import { NotFoundPage } from '@/pages'
 
 export default { component: NotFoundPage } as ComponentMeta<typeof NotFoundPage>
 

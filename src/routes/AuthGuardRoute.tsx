@@ -1,7 +1,7 @@
 import { FC, ReactNode, useEffect, useState } from 'react'
 import { Navigate } from 'react-router-dom'
 
-import { useAuth } from '@/hooks/useAuth'
+import { useAuth } from '@/hooks'
 
 type Props = {
   children: ReactNode
