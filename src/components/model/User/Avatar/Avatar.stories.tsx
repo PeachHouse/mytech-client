@@ -1,6 +1,6 @@
 import type { ComponentMeta, ComponentStoryObj } from '@storybook/react'
 
-import { Avatar } from '@/components/model/User/Avatar'
+import { Avatar } from '@/components/model/User'
 
 export default { component: Avatar } as ComponentMeta<typeof Avatar>
 

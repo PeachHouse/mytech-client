@@ -1,16 +1,11 @@
-import { FC, ReactNode } from 'react'
-import { UseFormRegisterReturn, FieldError } from 'react-hook-form'
+import { FC } from 'react'
+import { FieldError } from 'react-hook-form'
 
 import { FieldWrapper } from '@/components/functional/Form'
-import { TextInput } from '@/components/ui'
+import { TextInput, TextInputProps } from '@/components/ui'
 
-type InputFieldProps = {
-  type?: 'text' | 'password'
-  registration?: UseFormRegisterReturn
-  placeholder?: string
+type InputFieldProps = TextInputProps & {
   error?: FieldError
-  icon?: ReactNode
-  testId?: string
 }
 
 export const InputField: FC<InputFieldProps> = (props) => {

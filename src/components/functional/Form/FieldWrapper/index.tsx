@@ -6,14 +6,10 @@ import { FieldError } from 'react-hook-form'
 import { colors } from '@/styles/colors'
 
 type FieldWrapperProps = {
-  label?: string
-  className?: string
   children: ReactNode
+  label?: string
   error?: FieldError | undefined
-  description?: string
 }
-
-export type FieldWrapperPassThroughProps = Omit<FieldWrapperProps, 'children'>
 
 const styles = {
   contents: css`

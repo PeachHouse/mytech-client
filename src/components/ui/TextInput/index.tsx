@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react'
-import { FC, ReactNode } from 'react'
+import { ComponentProps, FC, ReactNode } from 'react'
 import { UseFormRegisterReturn } from 'react-hook-form'
 
 import { colors } from '@/styles/colors'
@@ -30,10 +30,8 @@ const styles = {
   `,
 }
 
-type TextInputProps = {
-  type?: 'text' | 'password'
+export type TextInputProps = ComponentProps<'input'> & {
   registration?: UseFormRegisterReturn
-  placeholder?: string
   icon?: ReactNode
   testId?: string
 }

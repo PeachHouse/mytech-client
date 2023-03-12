@@ -1,14 +1,11 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react'
-import { FC, Suspense } from 'react'
-import { ErrorBoundary } from 'react-error-boundary'
-import { FiMail } from 'react-icons/all'
-import { RiLockPasswordLine } from 'react-icons/all'
+import { FC } from 'react'
+import { FiMail, RiLockPasswordLine } from 'react-icons/all'
 
 import { Form, InputField, loginSchema } from '@/components/functional/Form'
 import { Button } from '@/components/ui'
-import { useAuth } from '@/hooks/useAuth'
-import { LoginFormValues, LoginProps } from '@/pages'
+import { LoginFormValues, LoginProps } from '@/pages/Login'
 import { fadeIn } from '@/styles/animation/fadeIn'
 import { colors } from '@/styles/colors'
 
@@ -45,7 +42,7 @@ const styles = {
   `,
 }
 
-const Presentation: FC<LoginProps> = ({ handleLogin }) => {
+export const Presenter: FC<LoginProps> = ({ handleLogin }) => {
   return (
     <div css={styles.container}>
       <h2 css={styles.title}>Welcome Back...</h2>
@@ -73,26 +70,12 @@ const Presentation: FC<LoginProps> = ({ handleLogin }) => {
               icon={<RiLockPasswordLine size={25} color={colors.gray} />}
               testId='password'
             />
-            <Button color='primary' disabled={!formState.isValid || !formState.isDirty}>
-              Sign In
+            <Button color='primary' disabled={!formState.isValid}>
+              Log In
             </Button>
           </div>
         )}
       </Form>
     </div>
-  )
-}
-
-export const LoginPage: FC = () => {
-  const { login } = useAuth()
-  const handleLogin = async (values: LoginFormValues) => {
-    login(values)
-  }
-  return (
-    <ErrorBoundary fallback={<p>An Error Occurred</p>}>
-      <Suspense fallback={<p>loading...</p>}>
-        <Presentation handleLogin={handleLogin} />
-      </Suspense>
-    </ErrorBoundary>
   )
 }

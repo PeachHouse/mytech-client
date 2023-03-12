@@ -22,7 +22,10 @@ export const useAuth = () => {
   }
 
   const signup = async (values: SignupFormValues): Promise<void> => {
-    await axios.post('/v1/user', values).then(() => navigate('/'))
+    await axios.post('/v1/user', values).then((res: AxiosResponse<User>) => {
+      setCurrentUser(res.data)
+      navigate('/')
+    })
   }
 
   const getCurrentUser = async (): Promise<void> => {
